@@ -58,6 +58,11 @@ The initalizer will be called when the job is created, and the `run` method
 will be invoked, when the job is processed asynchronously.
 
 ### Running the jobs
+First add to your `Rakefile`
+```ruby
+require 'resque/tasks'
+```
+Then you can invoke the rake task:
 
 ```bash
 $ QUEUE=* rake environment resque:work
