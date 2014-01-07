@@ -1,6 +1,6 @@
 # Hydra::Queue
 
-A queue agnostic interface for Rails.
+A queue agnostic interface for Rails. Currently only Resque is supported, but we'd like to add other implementations if you want to contribute one.
 
 ## Installation
 
@@ -24,6 +24,9 @@ Create a config file: `config/resque.yml`
   development: localhost:6379
   test: localhost:6379
   production: redis1.ae.github.com:6379
+```
+
+Then make an initializer that reads the yaml file and sets up Resque:
 
 ```ruby
   # config/initializers/resque.rb
@@ -55,9 +58,9 @@ Hydra::Queue.push(my_job)
 ```
 
 The initalizer will be called when the job is created, and the `run` method
-will be invoked, when the job is processed asynchronously.
+will be invoked when the job is processed asynchronously.
 
-### Running the jobs
+### Running the background workers
 First add to your `Rakefile`
 ```ruby
 require 'resque/tasks'
