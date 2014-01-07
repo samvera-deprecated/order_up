@@ -19,6 +19,10 @@ module Hydra::Queue
   end
 
   class Configuration
-    attr_accessor :queue
+    attr_writer :queue
+
+    def queue
+      @queue || Hydra::Queue::Resque
+    end
   end
 end
