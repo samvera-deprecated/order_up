@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'order_up/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "hydra-queue"
+  spec.name          = "order_up"
   spec.version       = OrderUp::VERSION
   spec.authors       = ["Justin Coyne"]
   spec.email         = ["justin@curationexperts.com"]
