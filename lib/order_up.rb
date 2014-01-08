@@ -1,6 +1,6 @@
-require 'hydra/head'
 require 'resque'
-module Hydra::Queue
+require 'active_support'
+module OrderUp
   extend ActiveSupport::Autoload
   autoload :Resque
   def self.config
@@ -22,7 +22,7 @@ module Hydra::Queue
     attr_writer :queue
 
     def queue
-      @queue || Hydra::Queue::Resque
+      @queue || OrderUp::Resque
     end
   end
 end

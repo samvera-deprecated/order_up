@@ -1,9 +1,10 @@
 require 'spec_helper'
+require 'active_support/core_ext/class/attribute'
 
-describe Hydra::Queue do
+describe OrderUp do
   before do
-    Hydra::Queue.config do |config|
-      config.queue = Hydra::Queue::Resque
+    OrderUp.config do |config|
+      config.queue = OrderUp::Resque
     end
   end
   class TestJob
@@ -19,7 +20,7 @@ describe Hydra::Queue do
     end
   end
   it "should do work in the background" do
-    Hydra::Queue.push TestJob.new('test message')
+    OrderUp.push TestJob.new('test message')
     TestJob.worked.should == 'test message'
 
   end

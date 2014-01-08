@@ -1,4 +1,4 @@
-# Hydra::Queue
+# OrderUp 
 
 A queue agnostic interface for Rails. Currently only Resque is supported, but we'd like to add other implementations if you want to contribute one.
 
@@ -54,7 +54,7 @@ class MyJob
 end
 
 my_job = MyJob.new(123, "It works!")
-Hydra::Queue.push(my_job)
+OrderUp.push(my_job)
 ```
 
 The initalizer will be called when the job is created, and the `run` method

@@ -1,4 +1,4 @@
-require 'hydra/queue'
+require 'order_up'
 
 Resque.inline = true
 RSpec.configure do |config|

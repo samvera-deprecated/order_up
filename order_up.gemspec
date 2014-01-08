@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'hydra/queue/version'
+require 'order_up/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "hydra-queue"
-  spec.version       = Hydra::Queue::VERSION
+  spec.version       = OrderUp::VERSION
   spec.authors       = ["Justin Coyne"]
   spec.email         = ["justin@curationexperts.com"]
   spec.summary       = %q{Backend agnostic queuing implementation}
@@ -18,7 +18,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "hydra-head"
   spec.add_dependency "resque", "~>1.25"
   spec.add_dependency "activesupport"
 
